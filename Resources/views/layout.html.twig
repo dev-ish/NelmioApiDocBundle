@@ -572,6 +572,9 @@
                         if (url.indexOf('{' + key + '}') !== -1) {
                             url = url.replace('{' + key + '}', params[key]);
                             delete params[key];
+                            if (formData.has(key)) {
+                                formData.delete(key);
+                            }
                         }
                     };
 
